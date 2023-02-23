@@ -16,6 +16,6 @@ FOR /F "tokens=*" %%g IN ('rasdial "A7 VPN" "vpn" "vpn"') do (SET vpn2=%%g)
 if not "%vpn2%"=="Command completed successfully." echo  Connection failed, trying with another server... & goto server
 echo         Successfully connected to A7 VPN
 echo.
-echo            Press any key to exit . . .
+echo            Press [Enter] to exit . . .
 set /p press=
 exit
