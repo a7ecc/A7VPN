@@ -10,10 +10,7 @@ rasdial "A7 VPN" /DISCONNECT >NUL
 powershell -command "Remove-VpnConnection -Force -Name 'A7 VPN'" >NUL
 powershell -command "Add-VpnConnection -Name 'A7 VPN' -ServerAddress 'public-vpn-%vpn1%.opengw.net' -TunnelType Sstp" >NUL
 cls
-echo.
-echo.
-echo              Connecting to A7 VPN...
-echo.
+echo. & echo. & echo              Connecting to A7 VPN... & echo.
 FOR /F "tokens=*" %%g IN ('rasdial "A7 VPN" "vpn" "vpn"') do (SET vpn2=%%g)
 if not "%vpn2%"=="Command completed successfully." echo  Connection failed, trying with another server... & goto server
 echo         Successfully connected to A7 VPN
